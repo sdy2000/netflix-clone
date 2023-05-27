@@ -8,14 +8,23 @@ const getSignUpModel = () => ({
 });
 
 const Signup = () => {
+  // TODO : Add Input Validation
   const { values, handleInputChange } = useForm(getSignUpModel);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const login = Object.fromEntries(formData);
+    console.log(login);
+  };
 
   return (
     <div className="relative">
       <BackgroundImage />
       <div className="absolute top-0 left-0 w-full">
         <Header login />
-        <div className="flex flex-col justify-center items-center gap-8 mt-6 xxs:mt-14 xs:mt-20 sm:mt-28 lg:mt-32 duration-300">
+        <div className="flex flex-col justify-center items-center gap-8 mt-6 xxs:mt-14 xs:mt-20 sm:mt-28 lg:mt-32 xl:mt-60 duration-300">
           <div className="flex flex-col justify-center items-center gap-3 text-center lg:max-w-2xl">
             <h1 className="text-xl xxs:text-2xl xs:text-3xl sm:text-4xl lg:text-6xl font-bold text-white flex-wrap duration-300">
               Unlimited movies, TV shows and more
@@ -27,7 +36,10 @@ const Signup = () => {
               Ready to watch? Enter your email to create or restart membership
             </h6>
           </div>
-          <form className="flex flex-col justify-center items-center gap-4 ">
+          <form
+            className="flex flex-col justify-center items-center gap-4 "
+            onSubmit={handleFormSubmit}
+          >
             <div className="flex flex-col md:flex-row justify-center items-center gap-1">
               <AccountingFormInput
                 type={"email"}
