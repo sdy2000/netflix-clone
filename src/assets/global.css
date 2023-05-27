@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+}
+
+@layer components {
+  /*!============================ Base ============================*/
+  /*?--------------- Button ----------------*/
+  .accounting-button {
+    @apply bg-red-600 text-white font-bold text-lg px-4 py-1 rounded-lg hover:bg-red-800 hover:scale-105 duration-300;
+  }
+}
