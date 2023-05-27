@@ -1,4 +1,5 @@
 import { BackgroundImage, Header } from "../../components";
+import { AccountingFormInput } from "../../components";
 import { useForm } from "../../utils";
 
 const getSignUpModel = () => ({
@@ -28,28 +29,27 @@ const Signup = () => {
           </div>
           <form className="flex flex-col justify-center items-center gap-4 ">
             <div className="flex flex-col md:flex-row justify-center items-center gap-1">
-              <input
-                className="outline-none h-12 w-80 px-4 py-2"
-                type="email"
-                placeholder="Email Address"
-                name="email"
+              <AccountingFormInput
+                type={"email"}
+                name={"email"}
+                id={"email"}
+                placeholder={"Email Address"}
                 onChange={handleInputChange}
                 value={values.email}
-                required
               />
-              <input
-                className="outline-none h-12 w-80 px-4 py-2"
-                type="password"
-                placeholder="Password"
-                name="password"
+              <AccountingFormInput
+                type={"password"}
+                name={"password"}
+                id={"password"}
+                placeholder={"Password"}
                 onChange={handleInputChange}
                 value={values.password}
-                required
+                hasIcon={true}
               />
             </div>
             <input
               type="submit"
-              className="bg-red-600 text-white font-bold text-lg px-4 py-1 rounded-lg hover:bg-red-800 hover:scale-105 duration-300 block"
+              className="accounting-button block"
               value="Sign Up"
             />
           </form>

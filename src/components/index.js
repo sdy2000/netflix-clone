@@ -1,6 +1,9 @@
-// / // / // / // Shared // / // / // / //
+// / // / // / // Shareds // / // / // / //
 export { default as Header } from "./shared/Header";
 export { default as BackgroundImage } from "./shared/BackgroundImage";
 
-// / // / // / // Button // / // / // / //
-export { default as AccountingButton } from "./button/AccountingButton";
+// / // / // / // Buttons // / // / // / //
+export { default as AccountingButton } from "./buttons/AccountingButton";
+
+// / // / // / // Inputs // / // / // / //
+export { default as AccountingFormInput } from "./inputs/AccountingFormInput";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import AccountingButton from "../button/AccountingButton";
+import AccountingButton from "../buttons/AccountingButton";
 
 const Header = (props) => {
   return (
