@@ -1,10 +1,24 @@
 import { BackgroundImage, Header } from "../../components";
+import { useForm } from "../../utils";
+
+const getSignupModel = () => ({
+  email: "",
+  password: "",
+});
 
 const Signup = () => {
+  const {
+    values,
+    // setValues,
+    errors,
+    setErrors,
+    handleInputChange,
+  } = useForm(getSignupModel);
+
   return (
     <div className="relative">
       <BackgroundImage />
-      <div className="absolute top-0 left-0">
+      <div className="absolute top-0 left-0 w-full">
         <Header />
         <div className="">
           <div className="">
