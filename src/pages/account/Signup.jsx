@@ -1,6 +1,12 @@
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { BackgroundImage, Header } from "../../components";
 import { AccountingFormInput } from "../../components";
 import { useForm } from "../../utils";
+import { firebaseAuth } from "../../utils/firebase/firebase-config";
+import { useNavigate } from "react-router-dom";
 
 const getSignUpModel = () => ({
   email: "",
@@ -10,14 +16,24 @@ const getSignUpModel = () => ({
 const Signup = () => {
   // TODO : Add Input Validation
   const { values, handleInputChange } = useForm(getSignUpModel);
+  const navigate = useNavigate();
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const login = Object.fromEntries(formData);
-    console.log(login);
+    const { email, password } = Object.fromEntries(formData);
+
+    try {
+      await createUserWithEmailAndPassword(firebaseAuth, email, password);
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  onAuthStateChanged(firebaseAuth, (currentUser) => {
+    if (currentUser) navigate("/");
+  });
 
   return (
     <div className="relative">
