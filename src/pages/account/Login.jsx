@@ -36,7 +36,6 @@ const Login = () => {
     console.log();
   }, [navigate]);
 
-  console.log(error);
   return (
     <div className="relative">
       <BackgroundImage />
