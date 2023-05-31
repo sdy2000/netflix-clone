@@ -12,3 +12,6 @@ export { default as AccountingFormInput } from "./inputs/AccountingFormInput";
 
 // / // / // / // Modals // / // / // / //
 export { default as LogOutModal } from "./modals/LogOutModal";
+
+// / // / // / // Modals // / // / // / //
+export { default as HomeSlider } from "./sliders/HomeSlider";

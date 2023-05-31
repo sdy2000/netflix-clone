@@ -3,9 +3,24 @@ import { Navbar } from "..";
 import { BackgroundImage } from "../../components";
 import { FaPlay } from "react-icons/fa";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchMovies, getGenres } from "../../store";
 
 const Home = () => {
   const navigate = useNavigate();
+  const genresLoaded = useSelector((state) => state.netflix.genresLoaded);
+  const movies = useSelector((state) => state.netflix.movies);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getGenres());
+    console.log(movies);
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (genresLoaded) dispatch(fetchMovies({ type: "all" }));
+  }, [dispatch, genresLoaded]);
 
   return (
     <div className="relative">
