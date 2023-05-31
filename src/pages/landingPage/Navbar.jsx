@@ -5,6 +5,8 @@ import { firebaseAuth } from "../../utils/firebase/firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { LogOutModal } from "../../components";
 import { useScrollHome } from "../../utils";
+import { BsList } from "react-icons/bs";
+import HiddenNavbar from "./HiddenNavbar";
 
 const links = [
   { name: "Home", link: "/" },
@@ -14,6 +16,7 @@ const links = [
 ];
 
 const Navbar = () => {
+  const [isOpenList, setIsOpenList] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [inputHover, setInputHover] = useState(false);
   const [logOut, setLogOut] = useState(false);
@@ -38,20 +41,20 @@ const Navbar = () => {
           <Link to="/" className="hover:scale-105 duration-300">
             <img className="h-12 md:h-20" src="/assets/logo.png" alt="Logo" />
           </Link>
-          <ul className="text-white flex justify-center items-center gap-4 font-semibold">
+          <ul className="text-white hidden sm:flex justify-center items-center gap-4 font-semibold ">
             {links.map((link, idx) => (
               <li key={idx}>{link.name}</li>
             ))}
           </ul>
         </div>
-        <div className="flex justify-center items-center gap-6">
+        <div className="flex justify-center items-center gap-5">
           <div
             className={`${
               showSearch ? "w-60 border-2 border-white" : "w-0"
             } flex justify-center items-center gap-2 rounded-xl py-1 ease-in-out duration-300`}
           >
             <button
-              className="text-white hover:text-red-600 hover:scale-110 duration-300"
+              className="home-nav-btn"
               onFocus={() => setShowSearch(true)}
               onBlur={() => {
                 if (!inputHover) {
@@ -75,13 +78,21 @@ const Navbar = () => {
               }}
             />
           </div>
-          <button
-            className="text-white hover:text-red-600 hover:scale-110 duration-300"
-            onClick={() => setLogOut(true)}
-          >
+          <button className="home-nav-btn" onClick={() => setLogOut(true)}>
             <FaPowerOff size={20} />
           </button>
+          <button
+            className="home-nav-btn sm:hidden"
+            onClick={() => setIsOpenList(!isOpenList)}
+          >
+            <BsList size={30} />
+          </button>
         </div>
+        <HiddenNavbar
+          isOpenList={isOpenList}
+          setIsOpenList={setIsOpenList}
+          links={links}
+        />
       </nav>
 
       {logOut && <LogOutModal onClose={() => setLogOut(false)} />}

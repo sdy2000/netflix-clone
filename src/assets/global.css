@@ -11,4 +11,7 @@
   .accounting-button {
     @apply bg-red-600 text-white font-bold text-lg px-4 py-1 rounded-lg hover:bg-red-800 hover:scale-105 duration-300;
   }
+  .home-nav-btn {
+    @apply text-white hover:text-red-600 hover:scale-110 duration-300;
+  }
 }
