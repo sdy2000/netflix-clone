@@ -1,4 +1,12 @@
+import { useScrollHome } from "../../utils";
+import { Navbar } from "..";
+
 const Home = () => {
-  return <div>Home</div>;
+  const { isScrolled } = useScrollHome();
+  return (
+    <div className="bg-black">
+      <Navbar isScrolled={isScrolled} />
+    </div>
+  );
 };
 export default Home;
