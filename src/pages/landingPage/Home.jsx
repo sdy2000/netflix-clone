@@ -1,11 +1,13 @@
-import { useScrollHome } from "../../utils";
 import { Navbar } from "..";
+import { BackgroundImage } from "../../components";
 
 const Home = () => {
-  const { isScrolled } = useScrollHome();
   return (
-    <div className="bg-black">
-      <Navbar isScrolled={isScrolled} />
+    <div className="relative">
+      <BackgroundImage imgUrl={"/assets/home.jpg"} />
+      <div className="absolute top-0 left-0 w-full">
+        <Navbar />
+      </div>
     </div>
   );
 };

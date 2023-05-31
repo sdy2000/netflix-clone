@@ -37,7 +37,7 @@ const Signup = () => {
 
   return (
     <div className="relative">
-      <BackgroundImage />
+      <BackgroundImage imgUrl={"/assets/login.jpg"} />
       <div className="absolute top-0 left-0 w-full">
         <Header login />
         <div className="flex flex-col justify-center items-center gap-8 mt-6 xxs:mt-14 xs:mt-20 sm:mt-28 lg:mt-32 xl:mt-60 duration-300">

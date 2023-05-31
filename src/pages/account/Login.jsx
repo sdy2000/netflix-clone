@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <div className="relative">
-      <BackgroundImage />
+      <BackgroundImage imgUrl={"/assets/login.jpg"} />
       <div className="absolute top-0 left-0 w-full">
         <Header />
         <div className="mx-auto max-w-lg py-12 bg-black bg-opacity-75 flex flex-col justify-center items-center gap-6">

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { firebaseAuth } from "../../utils/firebase/firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { LogOutModal } from "../../components";
+import { useScrollHome } from "../../utils";
 
 const links = [
   { name: "Home", link: "/" },
@@ -17,6 +18,7 @@ const Navbar = () => {
   const [inputHover, setInputHover] = useState(false);
   const [logOut, setLogOut] = useState(false);
   const navigate = useNavigate();
+  const { isScrolled } = useScrollHome();
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (currentUser) => {
@@ -27,7 +29,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container flex justify-between items-center">
+      <nav
+        className={`${
+          isScrolled ? "bg-black fixed w-full" : ""
+        } px-10 flex justify-between items-center bg-opacity-90 duration-300`}
+      >
         <div className="flex justify-center items-center gap-6">
           <Link to="/" className="hover:scale-105 duration-300">
             <img className="h-12 md:h-20" src="/assets/logo.png" alt="Logo" />
