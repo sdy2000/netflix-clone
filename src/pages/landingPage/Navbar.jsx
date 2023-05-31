@@ -2,7 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaPowerOff, FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { firebaseAuth } from "../../utils/firebase/firebase-config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
+import { LogOutModal } from "../../components";
 
 const links = [
   { name: "Home", link: "/" },
@@ -70,14 +71,14 @@ const Navbar = () => {
           </div>
           <button
             className="text-white hover:text-red-600 hover:scale-110 duration-300"
-            onClick={() => signOut(firebaseAuth)}
+            onClick={() => setLogOut(true)}
           >
             <FaPowerOff size={20} />
           </button>
         </div>
       </nav>
 
-      {logOut && <logOut onClose={() => setLogOut(false)} />}
+      {logOut && <LogOutModal onClose={() => setLogOut(false)} />}
     </>
   );
 };
