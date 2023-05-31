@@ -1,6 +1,7 @@
 // / // / // / // Shareds // / // / // / //
 export { default as Header } from "./shared/Header";
 export { default as BackgroundImage } from "./shared/BackgroundImage";
+export { default as Player } from "./shared/Player";
 
 // / // / // / // Buttons // / // / // / //
 export { default as AccountingButton } from "./buttons/AccountingButton";

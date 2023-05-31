@@ -14,4 +14,8 @@
   .home-nav-btn {
     @apply text-white hover:text-red-600 hover:scale-110 duration-300;
   }
+  .movie-btn {
+    @apply flex justify-center items-center gap-3 text-sm font-bold sm:text-xl sm:font-semibold
+     py-1 px-5 hover:scale-110 hover:bg-opacity-[0.80] rounded-lg shadow-lg duration-300;
+  }
 }
