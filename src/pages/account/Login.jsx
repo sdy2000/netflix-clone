@@ -78,7 +78,7 @@ const Login = () => {
             <input
               type="submit"
               className="accounting-button w-full"
-              value="Sign Up"
+              value="Log In"
             />
           </form>
         </div>

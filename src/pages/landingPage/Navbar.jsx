@@ -43,7 +43,12 @@ const Navbar = () => {
           </Link>
           <ul className="text-white hidden sm:flex justify-center items-center gap-4 font-semibold ">
             {links.map((link, idx) => (
-              <li key={idx}>{link.name}</li>
+              <li
+                className="hover:scale-110 hover:text-gray-400 duration-300"
+                key={idx}
+              >
+                <Link to={link.link}>{link.name}</Link>
+              </li>
             ))}
           </ul>
         </div>
