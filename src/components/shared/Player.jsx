@@ -19,7 +19,7 @@ const Player = () => {
         loop
         controls
         muted
-      ></video>
+      />
     </div>
   );
 };
