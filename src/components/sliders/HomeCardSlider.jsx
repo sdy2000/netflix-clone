@@ -21,7 +21,7 @@ const HomeCardSlider = ({ title, data }) => {
 
   return (
     <div
-      className="container flex flex-col gap-4 relative py-8 mx-auto max-w-[100rem] overflow-x-hidden"
+      className="flex flex-col gap-4 relative py-8 mx-auto max-w-[100rem]"
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
     >
@@ -35,10 +35,10 @@ const HomeCardSlider = ({ title, data }) => {
           <AiOutlineLeft onClick={() => handleDirection("left")} />
         </span>
         <div
-          className="mx-14 duration-300 ease-in-out overflow-x-scroll scroll no-scrollbar whitespace-nowrap scroll-smooth"
+          className="mx-14 duration-300 ease-in-out no-scrollbar whitespace-nowrap scroll-smooth"
           ref={listRef}
         >
-          <div className="flex gap-4 w-max ">
+          <div className="flex gap-4 w-max">
             {data.map((movie, idx) => (
               <HomeCard movieData={movie} idx={idx} key={movie.id} />
             ))}

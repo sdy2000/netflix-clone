@@ -8,7 +8,7 @@ const Slider = ({ movies }) => {
   // TODO: Create Loader for HomeCardSlider
   // console.log(movies);
   return (
-    <div>
+    <div className="container overflow-hidden">
       <HomeCardSlider title="Trending Now" data={getMoviesFromRange(0, 10)} />
       <HomeCardSlider title="New Releases" data={getMoviesFromRange(10, 20)} />
       <HomeCardSlider
