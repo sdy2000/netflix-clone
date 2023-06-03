@@ -41,7 +41,7 @@ const Login = () => {
       <BackgroundImage imgUrl={"/assets/login.jpg"} />
       <div className="absolute top-0 left-0 w-full">
         <Header />
-        <div className="mx-auto max-w-lg py-12 bg-black bg-opacity-75 flex flex-col justify-center items-center gap-6">
+        <div className="mx-4 xs:mx-auto max-w-lg py-12 mt-16 sm:mt-32 md:mt-48 bg-black bg-opacity-75 flex flex-col justify-center items-center gap-6">
           <h1 className="text-white font-bold text-2xl">Log In</h1>
           <form
             className="flex flex-col justify-center items-center gap-4"

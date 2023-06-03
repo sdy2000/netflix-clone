@@ -14,7 +14,7 @@ const AccountingFormInput = ({
   const [isShowPass, setIsShowPass] = useState(false);
 
   return (
-    <div className="relative bg-white h-12 w-96">
+    <div className="relative bg-white h-10 w-72 sm:h-12 sm:w-96">
       <input
         className="outline-none w-full h-full px-4 py-2 pr-16"
         type={isShowPass ? "text" : type}
@@ -27,7 +27,7 @@ const AccountingFormInput = ({
       />
       {hasIcon &&
         (!isShowPass ? (
-          <span className="absolute right-0 top-0 bg-gray-200 px-3 py-[9px]">
+          <span className="absolute right-0 top-0 bg-gray-200 px-3 py-[5px] sm:py-[9px]">
             <BsEye
               onClick={() => {
                 setIsShowPass(true);
@@ -36,7 +36,7 @@ const AccountingFormInput = ({
             />
           </span>
         ) : (
-          <span className="absolute right-0 top-0 bg-gray-200 px-3 py-[9px]">
+          <span className="absolute right-0 top-0 bg-gray-200 px-3 py-[5px] sm:py-[9px]">
             <BsEyeSlash
               onClick={() => {
                 setIsShowPass(false);

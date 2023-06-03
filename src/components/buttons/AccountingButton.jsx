@@ -7,7 +7,7 @@ const AccountingButton = (props) => {
       className="accounting-button"
       onClick={() => navigate(props.props.login ? "/login" : "/signup")}
     >
-      {props.props.login ? "Log In" : "Sign In"}
+      {props.props.login ? "Log In" : "Sign Up"}
     </button>
   );
 };
