@@ -19,6 +19,3 @@ export { default as HomeCardSlider } from "./sliders/HomeCardSlider";
 
 // / // / // / // Cards // / // / // / //
 export { default as HomeCard } from "./cards/HomeCard";
-
-// / // / // / // Controls // / // / // / //
-export { default as HomeSliderControl } from "./controls/HomeSliderControl";
