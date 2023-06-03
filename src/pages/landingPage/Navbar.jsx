@@ -35,7 +35,7 @@ const Navbar = () => {
       <nav
         className={`${
           isScrolled ? "bg-black fixed w-full" : ""
-        } px-10 flex justify-between items-center bg-opacity-90 duration-300`}
+        } px-10 flex justify-between items-center bg-opacity-90 duration-300 z-50`}
       >
         <div className="flex justify-center items-center gap-6">
           <Link to="/" className="hover:scale-105 duration-300">

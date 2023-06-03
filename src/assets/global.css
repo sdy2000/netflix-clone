@@ -24,4 +24,7 @@
   .card-svg svg {
     @apply hover:text-zinc-500 duration-300;
   }
+  .slider-arrow {
+    @apply absolute top-12 z-50 text-4xl h-full w-12 text-white hover:text-zinc-600 duration-300 ease-in-out;
+  }
 }

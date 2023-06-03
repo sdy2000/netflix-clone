@@ -5,6 +5,8 @@ const Slider = ({ movies }) => {
     return movies.slice(from, to);
   };
 
+  // TODO: Create Loader for HomeCardSlider
+  // console.log(movies);
   return (
     <div>
       <HomeCardSlider title="Trending Now" data={getMoviesFromRange(0, 10)} />
