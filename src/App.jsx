@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Signup } from "./pages";
+import { Home, Login, Movies, Signup } from "./pages";
 import { Player } from "./components";
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
           <Route path="/player" element={<Player />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/movies" element={<Movies />} />
         </Routes>
       </BrowserRouter>
     </div>
