@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Movies, Signup } from "./pages";
+import { Home, Login, Movies, Signup, TVShows } from "./pages";
 import { Player } from "./components";
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/tv" element={<TVShows />} />
         </Routes>
       </BrowserRouter>
     </div>

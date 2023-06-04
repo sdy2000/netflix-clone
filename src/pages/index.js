@@ -12,3 +12,4 @@ export { default as Signup } from "./account/Signup";
 // / // / // / // Movies // / // / // / //
 export { default as Movies } from "./Movies/Movies";
 export { default as NotAvailable } from "./Movies/NotAvailable";
+export { default as TVShows } from "./Movies/TVShows";

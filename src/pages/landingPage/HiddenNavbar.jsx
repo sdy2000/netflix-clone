@@ -34,7 +34,9 @@ const HiddenNavbar = ({ isOpenList, setIsOpenList, links }) => {
         <div className="w-full px-8 my-8">
           <ul className="text-white flex flex-col justify-start gap-4 font-semibold ">
             {links.map((link, idx) => (
-              <li key={idx}>{link.name}</li>
+              <li key={idx}>
+                <Link to={link.link}>{link.name}</Link>
+              </li>
             ))}
           </ul>
         </div>
