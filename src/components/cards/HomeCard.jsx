@@ -22,7 +22,7 @@ const HomeCard = ({ movieData, isLinked = false }) => {
         className="rounded w-full h-full z-10"
       />
       {isHovered && (
-        <div className="absolute z-50 bg-zinc-900 h-max w-80 top-[0] left-0 rounded-md shadow-lg duration-300 ease-in-out">
+        <div className="absolute z-[99] bg-zinc-900 h-max w-80 -top-10 -left-8 rounded-md shadow-lg duration-300 ease-in-out">
           <div className="relative h-40">
             <img
               src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
@@ -31,7 +31,7 @@ const HomeCard = ({ movieData, isLinked = false }) => {
               onClick={() => navigate("/player")}
             />
             <video
-              className="absolute z-40 w-full h-40 object-cover rounded-md top-0 "
+              className="absolute z-40 w-full h-40 object-cover rounded-md top-0"
               src="/assets/Stranger-Things-4-Netflix.mp4"
               autoPlay
               loop
@@ -39,9 +39,9 @@ const HomeCard = ({ movieData, isLinked = false }) => {
               muted
             />
           </div>
-          <div className="text-white p-4 flex flex-col justify-start gap-3">
+          <div className="text-white p-4 flex flex-col justify-start gap-3 overflow-clip">
             <h3
-              className="text-xl font-bold flex-wrap"
+              className="text-xl font-bold"
               onClick={() => navigate("/player")}
             >
               {movieData.name}

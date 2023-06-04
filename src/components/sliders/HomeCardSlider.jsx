@@ -1,21 +1,37 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { HomeCard } from "..";
 
 const HomeCardSlider = ({ title, data }) => {
   const [showControls, setShowControls] = useState(false);
-  const [sliderPosition, setSliderPosition] = useState(0);
+  const [currentClientRect, setCurrentClientRect] = useState(0);
   const listRef = useRef();
 
-  const handleDirection = (direction) => {
-    if (direction === "left" && sliderPosition > 0) {
-      listRef.current.scrollLeft = listRef.current.scrollLeft - 239;
-      setSliderPosition(sliderPosition - 1);
-    }
+  useEffect(() => {
+    setCurrentClientRect(listRef.current.getBoundingClientRect().x);
+  }, []);
 
-    if (direction === "right" && sliderPosition < 9) {
-      listRef.current.scrollLeft = listRef.current.scrollLeft + 239;
-      setSliderPosition(sliderPosition + 1);
+  const handleDirection = (direction) => {
+    let distance =
+      listRef.current.getBoundingClientRect().x - currentClientRect;
+
+    if (direction === "left") {
+      if (distance >= 0) {
+        listRef.current.style.transform = `translateX(-1200px)`;
+      } else {
+        listRef.current.style.transform = `translateX(${
+          distance + currentClientRect
+        }px)`;
+      }
+    }
+    if (direction === "right") {
+      if (distance <= -1200) {
+        listRef.current.style.transform = `translateX(0px)`;
+      } else {
+        listRef.current.style.transform = `translateX(${
+          distance - currentClientRect
+        }px)`;
+      }
     }
   };
 
@@ -34,11 +50,11 @@ const HomeCardSlider = ({ title, data }) => {
         >
           <AiOutlineLeft onClick={() => handleDirection("left")} />
         </span>
-        <div
-          className="mx-14 duration-300 ease-in-out no-scrollbar whitespace-nowrap scroll-smooth"
-          ref={listRef}
-        >
-          <div className="flex gap-4 w-max">
+        <div className="mx-14 overflow-x-clip">
+          <div
+            className="flex gap-4 w-max ease-in-out no-scrollbar whitespace-nowrap scroll-smooth duration-300"
+            ref={listRef}
+          >
             {data.map((movie, idx) => (
               <HomeCard movieData={movie} idx={idx} key={movie.id} />
             ))}
