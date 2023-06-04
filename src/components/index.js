@@ -19,3 +19,6 @@ export { default as HomeCardSlider } from "./sliders/HomeCardSlider";
 
 // / // / // / // Cards // / // / // / //
 export { default as HomeCard } from "./cards/HomeCard";
+
+// / // / // / // DropDowns // / // / // / //
+export { default as SelectGenre } from "./dropdowns/SelectGenre";
